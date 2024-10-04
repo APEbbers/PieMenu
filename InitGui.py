@@ -1399,18 +1399,18 @@ def pieMenuStart():
 
                             self.checkbox_midPlane = checkbox_layout(self.checkboxSymToPlane, "Midplane", True)
                             layoutMidPlane.addWidget(self.checkbox_midPlane)
-                            layoutOptions.addChildLayout(layoutMidPlane)
+                            layoutOptions.addLayout(layoutMidPlane)
 
                             self.checkbox_reversed = checkbox_layout(self.checkboxReversed, "Reversed", True)
                             layoutReversed.addWidget(self.checkbox_reversed)
-                            layoutOptions.addChildLayout(layoutReversed)
+                            layoutOptions.addLayout(layoutReversed)
 
                             if (str(fonctionActive) == '<PartDesign::Pocket>'):
                                 self.checkbox_throughAll = checkbox_layout(
                                     self.checkboxThroughAll, "Type", "ThroughAll")
 
                                 layoutThroughAll.addWidget(self.checkbox_throughAll)
-                                layoutOptions.addChildLayout(layoutThroughAll)
+                                layoutOptions.addLayout(layoutThroughAll)
 
                         elif (str(fonctionActive) == '<PartDesign::Revolution>') or (str(fonctionActive) == '<PartDesign::Groove>'):
                             Gui.ExpressionBinding(self.double_spinbox).bind(g.Object, "Angle")
@@ -1418,11 +1418,11 @@ def pieMenuStart():
 
                             self.checkbox_midPlane = checkbox_layout(self.checkboxSymToPlane, "Midplane", True)
                             layoutMidPlane.addWidget(self.checkbox_midPlane)
-                            layoutOptions.addChildLayout(layoutMidPlane)
+                            layoutOptions.addLayout(layoutMidPlane)
 
                             self.checkbox_reversed = checkbox_layout(self.checkboxReversed, "Reversed", True)
                             layoutReversed.addWidget(self.checkbox_reversed)
-                            layoutOptions.addChildLayout(layoutReversed)
+                            layoutOptions.addLayout(layoutReversed)
 
                         self.double_spinbox.setProperty('value', quantity)
 
@@ -4638,7 +4638,7 @@ def pieMenuStart():
     layoutDefaultPieLeft.addWidget(labelDefaultPie)
     layoutDefaultPieLeft.addStretch(1)
     layoutDefaultPie = QHBoxLayout()
-    layoutDefaultPie.addChildLayout(layoutDefaultPieLeft, 1)
+    layoutDefaultPie.addLayout(layoutDefaultPieLeft)
 
     labelWbForPieMenu = QLabel(translate("PieMenuTab", "Workbench associated to this PieMenu:"))
     labelWbForPieMenu.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4652,8 +4652,8 @@ def pieMenuStart():
     layoutWbForPieMenuRight = QHBoxLayout()
     layoutWbForPieMenuRight.addWidget(comboWbForPieMenu)
     layoutWbForPieMenu = QHBoxLayout()
-    layoutWbForPieMenu.addChildLayout(layoutWbForPieMenuLeft, 1)
-    layoutWbForPieMenu.addChildLayout(layoutWbForPieMenuRight, 1)
+    layoutWbForPieMenu.addLayout(layoutWbForPieMenuLeft, 1)
+    layoutWbForPieMenu.addLayout(layoutWbForPieMenuRight, 1)
 
     piemenuSettingGroup = QGroupBox(translate("PieMenuTab", "Assignment"))
     piemenuSettingGroup.setLayout(QVBoxLayout())
@@ -4673,8 +4673,8 @@ def pieMenuStart():
     layoutShapeRight = QHBoxLayout()
     layoutShapeRight.addWidget(comboShape)
     layoutShape = QHBoxLayout()
-    layoutShape.addChildLayout(layoutShapeLeft, 1)
-    layoutShape.addChildLayout(layoutShapeRight, 1)
+    layoutShape.addLayout(layoutShapeLeft, 1)
+    layoutShape.addLayout(layoutShapeRight, 1)
 
     labelRadius = QLabel(translate("PieMenuTab", "Pie size:"))
     labelRadius.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4689,8 +4689,8 @@ def pieMenuStart():
     layoutRadiusRight = QHBoxLayout()
     layoutRadiusRight.addWidget(spinRadius)
     layoutRadius = QHBoxLayout()
-    layoutRadius.addChildLayout(layoutRadiusLeft, 1)
-    layoutRadius.addChildLayout(layoutRadiusRight, 1)
+    layoutRadius.addLayout(layoutRadiusLeft, 1)
+    layoutRadius.addLayout(layoutRadiusRight, 1)
 
     labelButton = QLabel(translate("PieMenuTab", "Button size:"))
     labelButton.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4706,8 +4706,8 @@ def pieMenuStart():
     layoutButtonRight = QHBoxLayout()
     layoutButtonRight.addWidget(spinButton)
     layoutButton = QHBoxLayout()
-    layoutButton.addChildLayout(layoutButtonLeft, 1)
-    layoutButton.addChildLayout(layoutButtonRight, 1)
+    layoutButton.addLayout(layoutButtonLeft, 1)
+    layoutButton.addLayout(layoutButtonRight, 1)
 
     labelIconSpacing = QLabel(translate("PieMenuTab", "Icon spacing:"))
     labelIconSpacing.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4722,8 +4722,8 @@ def pieMenuStart():
     layoutIconSpacingRight = QHBoxLayout()
     layoutIconSpacingRight.addWidget(spinIconSpacing)
     layoutIconSpacing = QHBoxLayout()
-    layoutIconSpacing.addChildLayout(layoutIconSpacingLeft, 1)
-    layoutIconSpacing.addChildLayout(layoutIconSpacingRight, 1)
+    layoutIconSpacing.addLayout(layoutIconSpacingLeft, 1)
+    layoutIconSpacing.addLayout(layoutIconSpacingRight, 1)
 
     labelNumColumn = QLabel(translate("PieMenuTab", "Number of columns:"))
     labelNumColumn.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4738,8 +4738,8 @@ def pieMenuStart():
     layoutColumnRight = QHBoxLayout()
     layoutColumnRight.addWidget(spinNumColumn)
     layoutColumn = QHBoxLayout()
-    layoutColumn.addChildLayout(layoutColumnLeft, 1)
-    layoutColumn.addChildLayout(layoutColumnRight, 1)
+    layoutColumn.addLayout(layoutColumnLeft, 1)
+    layoutColumn.addLayout(layoutColumnRight, 1)
 
     labelCommandPerCircle = QLabel(translate("PieMenuTab", "Command for first circle:"))
     labelCommandPerCircle.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -4755,8 +4755,8 @@ def pieMenuStart():
     layoutCommandPerCircleRight = QHBoxLayout()
     layoutCommandPerCircleRight.addWidget(spinCommandPerCircle)
     layoutCommandPerCircle = QHBoxLayout()
-    layoutCommandPerCircle.addChildLayout(layoutCommandPerCircleLeft, 1)
-    layoutCommandPerCircle.addChildLayout(layoutCommandPerCircleRight, 1)
+    layoutCommandPerCircle.addLayout(layoutCommandPerCircleLeft, 1)
+    layoutCommandPerCircle.addLayout(layoutCommandPerCircleRight, 1)
 
     checkboxDisplayCommandName = QCheckBox()
     checkboxDisplayCommandName.setCheckable(True)
@@ -4770,7 +4770,7 @@ def pieMenuStart():
     layoutDisplayCommandNameLeft.addWidget(labeldisplayCommandName)
     layoutDisplayCommandNameLeft.addStretch(1)
     layoutDisplayCommandName = QHBoxLayout()
-    layoutDisplayCommandName.addChildLayout(layoutDisplayCommandNameLeft, 1)
+    layoutDisplayCommandName.addLayout(layoutDisplayCommandNameLeft, 1)
 
     checkboxDisplayPreselect = QCheckBox()
     checkboxDisplayPreselect.setCheckable(True)
@@ -4784,7 +4784,7 @@ def pieMenuStart():
     layoutDisplayPreselectLeft.addWidget(labelDisplayPreselect)
     layoutDisplayPreselectLeft.addStretch(1)
     layoutDisplayPreselect = QHBoxLayout()
-    layoutDisplayPreselect.addChildLayout(layoutDisplayPreselectLeft, 1)
+    layoutDisplayPreselect.addLayout(layoutDisplayPreselectLeft, 1)
 
     shapeGroup = QGroupBox(translate("PieMenuTab", "Shape"))
     shapeGroup.setLayout(QVBoxLayout())
@@ -4821,15 +4821,15 @@ def pieMenuStart():
     spinHoverDelay.valueChanged.connect(onSpinHoverDelay)
 
     layoutTriggerButtonLeft = QHBoxLayout()
-    layoutTriggerButtonLeft.addChildLayout(layoutActionHoverButton)
+    layoutTriggerButtonLeft.addLayout(layoutActionHoverButton)
     layoutTriggerButtonLeft.addStretch(1)
     layoutTriggerButtonRight = QHBoxLayout()
     layoutTriggerButtonRight.addWidget(labelHoverDelay)
     layoutTriggerButtonRight.addStretch(1)
     layoutTriggerButtonRight.addWidget(spinHoverDelay)
     layoutTriggerButton = QHBoxLayout()
-    layoutTriggerButton.addChildLayout(layoutTriggerButtonLeft, 1)
-    layoutTriggerButton.addChildLayout(layoutTriggerButtonRight, 1)
+    layoutTriggerButton.addLayout(layoutTriggerButtonLeft, 1)
+    layoutTriggerButton.addLayout(layoutTriggerButtonRight, 1)
 
     triggerModeGroup = QGroupBox(translate("PieMenuTab", "Trigger mode"))
     triggerModeGroup.setLayout(QVBoxLayout())
@@ -4864,8 +4864,8 @@ def pieMenuStart():
     layoutDisplayShortcutRight.addWidget(labelShortcutSize)
     layoutDisplayShortcutRight.addWidget(spinShortcutLabelSize)
     layoutDisplayShortcut = QHBoxLayout()
-    layoutDisplayShortcut.addChildLayout(layoutDisplayShortcutLeft, 1)
-    layoutDisplayShortcut.addChildLayout(layoutDisplayShortcutRight, 1)
+    layoutDisplayShortcut.addLayout(layoutDisplayShortcutLeft, 1)
+    layoutDisplayShortcut.addLayout(layoutDisplayShortcutRight, 1)
 
     enableShortcut = getParameterGroup(cBox.currentText(), "Bool", "EnableShorcut")
     if enableShortcut == "":
@@ -4942,7 +4942,7 @@ def pieMenuStart():
     toolListWidget.itemChanged.connect(onToolListWidget)
 
     toolListLayout = QVBoxLayout()
-    toolListLayout.addChildLayout(searchLayout)
+    toolListLayout.addLayout(searchLayout)
     toolListLayout.addWidget(toolListWidget)
 
     widgetContainer = QWidget()
@@ -5236,8 +5236,8 @@ def pieMenuStart():
     button_row_layout.addWidget(doc_button, 0, alignment=Qt.AlignmentFlag.AlignRight)
 
     button_layout = QVBoxLayout()
-    button_layout.addChildLayout(layoutInfoShortcut)
-    button_layout.addChildLayout(button_row_layout)
+    button_layout.addLayout(layoutInfoShortcut)
+    button_layout.addLayout(button_row_layout)
 
     global pieMenuDialog
     pieMenuDialog = PieMenuDialog()
@@ -5245,7 +5245,7 @@ def pieMenuStart():
     pieMenuDialogLayout = QVBoxLayout()
     pieMenuDialog.setLayout(pieMenuDialogLayout)
     pieMenuDialogLayout.addWidget(preferencesWidget)
-    pieMenuDialogLayout.addChildLayout(button_layout)
+    pieMenuDialogLayout.addLayout(button_layout)
 
     close_button.clicked.connect(pieMenuDialog.close)
 
@@ -5265,8 +5265,8 @@ def pieMenuStart():
     layoutThemeRight = QHBoxLayout()
     layoutThemeRight.addWidget(comboBoxTheme)
     layoutTheme = QHBoxLayout()
-    layoutTheme.addChildLayout(layoutThemeLeft, 1)
-    layoutTheme.addChildLayout(layoutThemeRight, 1)
+    layoutTheme.addLayout(layoutThemeLeft, 1)
+    layoutTheme.addLayout(layoutThemeRight, 1)
 
     checkboxQuickMenu = QCheckBox()
     checkboxQuickMenu.setCheckable(True)
@@ -5282,7 +5282,7 @@ def pieMenuStart():
     layoutShowQuickMenuLeft.addWidget(labelShowQuickMenu)
     layoutShowQuickMenuLeft.addStretch(1)
     layoutShowQuickMenu = QHBoxLayout()
-    layoutShowQuickMenu.addChildLayout(layoutShowQuickMenuLeft, 1)
+    layoutShowQuickMenu.addLayout(layoutShowQuickMenuLeft, 1)
 
     checkboxGlobalContext = QCheckBox()
     checkboxGlobalContext.setCheckable(True)
@@ -5298,7 +5298,7 @@ def pieMenuStart():
     layoutGlobalContextLeft.addWidget(labelGlobalContext)
     layoutGlobalContextLeft.addStretch(1)
     layoutGlobalContext = QHBoxLayout()
-    layoutGlobalContext.addChildLayout(layoutGlobalContextLeft, 1)
+    layoutGlobalContext.addLayout(layoutGlobalContextLeft, 1)
 
     checkboxGlobalKeyToggle = QCheckBox()
     checkboxGlobalKeyToggle.setCheckable(True)
